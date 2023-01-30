@@ -5,7 +5,7 @@ class Employees {
     }
 
     details() {
-        return `Working as a fulltime ${this.position}`;
+        return this.position;
     }
 }
 
@@ -25,5 +25,17 @@ class Employee extends Employees {
 const employees = new Employees("Bob", "28", "Manager");
 const employee = new Employee("Traven", "29", "Software Developer");
 
-console.log(employee.details());
+console.log(employees.details());
 console.warn(employee.description());
+
+const title = document.createElement("h1");
+document.body.appendChild(title);
+title.innerHTML = "Parent and Child Class";
+
+const employeesClass = document.createElement("p");
+document.body.appendChild(employeesClass);
+employeesClass.innerText = employee.details();
+
+const employeeClass = document.createElement("h2");
+document.body.appendChild(employeeClass);
+employeeClass.innerText = employee.description();
